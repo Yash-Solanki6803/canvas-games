@@ -225,11 +225,19 @@ const BallShooter: React.FC = () => {
 
   return (
     <>
-      <canvas ref={canvasRef}></canvas>
-      <div id="score" ref={scoreRef}></div>
-      <div id="modal" ref={modalRef}>
+      <canvas className="block" ref={canvasRef}></canvas>
+      <div className=" absolute top-0 text-center px-4 text-xl text-white select-none">
+        Score <p id="score" ref={scoreRef}></p>
+      </div>
+      <div
+        className="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-3xl  flex-col justify-center items-center px-14 py-10 rounded-md"
+        id="modal"
+        ref={modalRef}
+      >
+        <p>Score</p>
         <div id="final-score" ref={finalScoreRef}></div>
         <button
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md text-lg hover:bg-blue-800 transition-all duration-300"
           id="play-btn"
           onClick={() => {
             init();
